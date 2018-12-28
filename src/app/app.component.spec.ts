@@ -22,6 +22,14 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to unit-tests-angular!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+  }));
+  it('button click should change the title', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    compiled.querySelector('button').click();
+    fixture.detectChanges();
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to new title!');
   }));
 });
