@@ -28,7 +28,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    compiled.querySelector('button').click();
+    compiled.querySelector('#newtitle').click();
     fixture.detectChanges();
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to new title!');
   }));
